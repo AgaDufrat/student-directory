@@ -27,7 +27,7 @@ end
 def print(students)
   i = 0
   while i < students.length do
-    puts "#{i + 1}. #{students[i][:name]} born on #{students[i][:dob]} in #{students[i][:country]} (#{students[i][:cohort]} cohort)"
+    puts "#{i + 1}. #{students[i][:name]} born on #{students[i][:dob]} in #{students[i][:country]} (#{students[i][:cohort]} cohort)".center(200)
     i +=1
   end
 end
