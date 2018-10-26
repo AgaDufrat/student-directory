@@ -4,7 +4,8 @@ def input_students
   cohorts = [:january, :february, :march, :april, :may, :june, :july, :august, :september, :october, :november, :december]
   puts "Please enter the names of the students and their details"
   puts "To finish, just hit return twice  when you are asked for a name"
-  name = gets.chomp
+  name = gets
+  name = name[0...name.length - 1]
   puts "Enter their cohort"
   cohort = gets.chomp
   while !name.empty? do
