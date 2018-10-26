@@ -51,6 +51,8 @@ def input_students
 end
 
 def load_students(filename = "students.csv")
+  puts "Enter filename"
+  filename = STDIN.gets.chomp
   file = File.open(filename, "r")
   file.readlines.each do |line|
   name, cohort = line.chomp.split(',')
@@ -81,6 +83,8 @@ def print_footer
 end
 
 def save_students
+  puts "Enter filename"
+  filename = STDIN.gets.chomp
   # open the file for writing
   file = File.open("students.csv", "w")
   # iterate over the array of students
@@ -94,7 +98,7 @@ end
 
 def try_load_students
   filename = ARGV.first# first argument from the command line
-  return load_students("students.csv") if filename.nil? # get out of the method if it isn't given
+  return if filename.nil? # get out of the method if it isn't given
   if File.exists?(filename) # if it exists
     load_students(filename)
      puts "Loaded #{@students.count} from #{filename}"
