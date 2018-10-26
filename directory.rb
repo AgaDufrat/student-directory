@@ -41,6 +41,7 @@ def print(students)
         i +=1
     end
 end
+
 def print_footer(students)
   if students.count == 1
     puts "Overall, we have #{students.count} great student"
@@ -51,6 +52,8 @@ end
 
 #nothing happens until we call the methods
 students = input_students
-print_header
-print(students)
+if !students.empty?
+  print_header
+  print(students)
+end
 print_footer(students)
