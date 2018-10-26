@@ -16,7 +16,11 @@ def input_students
       cohort = gets.chomp.to_sym
     end
     students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} students"
+    if students.count == 1
+      puts "Now we have #{students.count} student"
+    else
+      puts "Now we have #{students.count} students"
+    end
     puts "Enter the name of the student"
     name = gets.chomp
     puts "Enter their cohort"
@@ -31,13 +35,17 @@ def print_header
 end
 def print(students)
   i = 0
-  while i < students.length do
-    puts "#{i + 1}. #{students[i][:name]} (#{students[i][:cohort]} cohort)"
-    i +=1
-  end
+    while i < students.length do
+        puts "#{i + 1}. #{students[i][:name]} (#{students[i][:cohort]} cohort)"
+        i +=1
+    end
 end
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  if students.count == 1
+    puts "Overall, we have #{students.count} great student"
+  else
+    puts "Overall, we have #{students.count} great students"
+  end
 end
 
 #nothing happens until we call the methods
